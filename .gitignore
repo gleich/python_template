@@ -1,3 +1,15 @@
+# Vim unsaved_changes:
+.swp
+
+# IDEA IDE Settings:
+.idea
+
+# VSCODE Settings:
+.vscode
+
+# MacOS Finder:
+.DS_Store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
