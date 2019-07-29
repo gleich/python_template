@@ -1,3 +1,5 @@
+_Remember, documentation always comes last_
+
 # Project Title
 
 One Paragraph of project description goes here
