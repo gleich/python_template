@@ -1,4 +1,4 @@
-FROM python:3.7.4-stretch
+FROM python:3.6-stretch
 
 # Fixing timezone:
 ENV TZ=America/New_York
