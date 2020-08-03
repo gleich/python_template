@@ -1,5 +1,3 @@
-
-
 def main():
     """
     Runs the main file
@@ -9,4 +7,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
