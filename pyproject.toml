@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "pyproject"
+name = "{{ PROJECT_NAME }}"
 version = "1.0.0"
-description = "PUT A DESCRIPTION HERE!"
+description = "{{ PROJECT_DESCRIPTION }}"
 authors = ["Matthew Gleich <matthewgleich@gmail.com>"]
 license = "MIT"
 

@@ -1,4 +1,6 @@
-# pyproject
+# {{ PROJECT_NAME }}
+
+{{ PROJECT_DESCRIPTION }}
 
 Please fill in the following files:
 
