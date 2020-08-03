@@ -1,4 +1,4 @@
-FROM python:3.6-stretch
+FROM python:3.8
 
 # Fixing timezone:
 ENV TZ=America/New_York
@@ -11,4 +11,4 @@ COPY /src /src
 
 WORKDIR /src
 CMD ["python3", "main.py"]
- 
+
