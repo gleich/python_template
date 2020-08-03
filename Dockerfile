@@ -1,14 +1,17 @@
 FROM python:3.8
 
+LABEL maintainer="matthewgleich@gmai.com"
+LABEL description="PROJECT_DESCRIPTION"
+
 # Fixing timezone:
 ENV TZ=America/New_York
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-COPY requirements.txt /requirements.txt
-RUN pip install -r /requirements.txt
+COPY . .
 
-COPY /src /src
+# Installing dependencies:
+RUN pip3 install poetry
+RUN poetry config virtualenvs.create false
+RUN poetry install --no-root --no-dev -n
 
-WORKDIR /src
 CMD ["python3", "main.py"]
-

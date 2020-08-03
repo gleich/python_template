@@ -1,6 +1,6 @@
-# {{ PROJECT_NAME }}
+# PROJECT_NAME
 
-{{ PROJECT_DESCRIPTION }}
+PROJECT_DESCRIPTION
 
 Please fill in the following files:
 
