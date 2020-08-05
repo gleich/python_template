@@ -15,13 +15,9 @@ jobs:
       - uses: dschep/install-poetry-action@v1.3
       - name: Install dependencies
         run: poetry install
-      - name: pytest
-        run: make test
+      - run: make test-pytest
   docker:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build docker image
-        run: docker build -f dev.Dockerfile -t mattgleich/PROJECT_NAME:test .
-      - name: Running docker image
-        run: docker run mattgleich/PROJECT_NAME:test
+      - name: make test-in-docker

@@ -18,4 +18,7 @@ RUN poetry install --no-root -n
 WORKDIR /usr/bin
 RUN curl -sL -o hadolint "https://github.com/hadolint/hadolint/releases/download/v1.17.6/hadolint-$(uname -s)-$(uname -m)"
 RUN chmod 700 hadolint
+
 WORKDIR /usr/src/app
+
+CMD ["make", "lint"]

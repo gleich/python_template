@@ -1,24 +1,52 @@
-format:
-	black .
+##########
+# Building
+##########
 
-lint:
+build-docker-prod:
+	docker build .
+build-docker-dev:
+	docker build -f dev.Dockerfile .
+build-docker-dev-lint:
+	docker build -f dev.lint.Dockerfile .
+
+#########
+# Linting
+#########
+
+lint-black:
+	black .
+lint-pylint:
 	pylint --errors-only PROJECT_NAME tests
+lint-poetry:
+	poetry check
+lint-hadolint:
 	hadolint Dockerfile
 	hadolint dev.Dockerfile
-	hadolint dev.env.Dockerfile
+	hadolint dev.lint.Dockerfile
+lint-in-docker:
+	docker build -f dev.lint.Dockerfile -t mattgleich/PROJECT_NAME:lint .
 
-docker-build:
-	docker build -f dev.Dockerfile .
-	docker build -f dev.env.Dockerfile .
-	docker build .
+#########
+# Testing
+#########
 
-check-format:
-	black --diff --check .
-
-test:
+test-pytest:
 	cd tests
 	pytest -vv
+	cd ..
+test-in-docker:
+	docker build -f dev.Dockerfile -t mattgleich/PROJECT_NAME:test .
+	docker run mattgleich/PROJECT_NAME:test
 
-docker-env:
-	docker build -f dev.env.Dockerfile -t mattgleich/PROJECT_NAME:env .
-	docker run --rm -it mattgleich/PROJECT_NAME:env sh
+##########
+# Grouping
+##########
+
+# Testing
+local-test: test-pytest test-in-docker
+docker-test: test-pytest
+# Linting
+local-lint: lint-black lint-pylint lint-hadolint lint-in-docker
+docker-lint: lint-black lint-pylint lint-hadolint
+# Build
+local-build: build-docker-prod build-docker-dev build-docker-dev-lint

@@ -14,6 +14,4 @@ RUN pip3 install poetry==1.0.10
 RUN poetry config virtualenvs.create false
 RUN poetry install --no-root -n
 
-WORKDIR /usr/src/app/tests
-
-CMD ["pytest", "-vv"]
+CMD ["make", "test"]
