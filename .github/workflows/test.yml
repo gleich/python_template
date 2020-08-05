@@ -16,14 +16,12 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - name: pytest
-        run: |
-          cd tests
-          pytest -vv
+        run: make test
   docker:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Build docker image
-        run: docker build . -f dev.Dockerfile -t mattgleich/profile_stack_dev
+        run: docker build -f dev.Dockerfile -t mattgleich/PROJECT_NAME:test .
       - name: Running docker image
-        run: docker run mattgleich/profile_stack_dev
+        run: docker run mattgleich/PROJECT_NAME:test

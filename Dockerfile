@@ -9,6 +9,7 @@ COPY . /usr/src/app
 WORKDIR /usr/src/app
 
 # Installing dependencies:
+RUN python -m pip install --upgrade pip
 RUN pip3 install poetry==1.0.10
 RUN poetry config virtualenvs.create false
 RUN poetry install --no-root --no-dev -n

@@ -17,7 +17,7 @@
 - This project used [black](https://github.com/psf/black) for formatting. Once installed please format with `make format` at the top of the project.
 - This project is linted using [pylint](https://github.com/PyCQA/pylint) for python files and [hadolint](https://github.com/hadolint/hadolint) for Dockerfiles. Once installed please run with `make lint`
 
-Do you not wanna install all of this on your machine? Just run `make dockerEnv` and you will get CLI access to a docker container with everything installed!
+Do you not wanna install all of this on your machine? Just run `make docker-env` and you will get CLI access to a docker container with everything installed!
 
 ### Process
 
