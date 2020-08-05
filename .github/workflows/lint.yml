@@ -27,3 +27,19 @@ jobs:
       - name: Install dependencies
         run: poetry install
       - run: pylint --errors-only PROJECT_NAME tests
+  hadolint:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Linting Dockerfile
+          uses: brpaz/hadolint-action@master
+          with:
+            dockerfile: 'Dockerfile'
+        - name: Linting dev.Dockerfile
+          uses: brpaz/hadolint-action@master
+          with:
+            dockerfile: 'dev.Dockerfile'
+        - name: Linting dev.env.Dockerfile
+          uses: brpaz/hadolint-action@master
+          with:
+            dockerfile: 'dev.env.Dockerfile'

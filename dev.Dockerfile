@@ -1,19 +1,18 @@
 FROM python:3.8
 
+# Meta data
 LABEL maintainer="matthewgleich@gmail.com"
 LABEL description="PROJECT_DESCRIPTION"
 
-# Fixing timezone:
-ENV TZ=America/New_York
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
-COPY . .
+# Copying over all the files
+COPY . /usr/src/app
+WORKDIR /usr/src/app
 
 # Installing dependencies:
-RUN pip3 install poetry
+RUN pip3 install poetry==1.0.10
 RUN poetry config virtualenvs.create false
 RUN poetry install --no-root -n
 
-WORKDIR /tests
+WORKDIR /usr/src/app/tests
 
 CMD ["pytest", "-vv"]

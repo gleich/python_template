@@ -3,8 +3,9 @@ format:
 
 lint:
 	pylint --errors-only PROJECT_NAME tests
-	hadolint dev.Dockerfile
 	hadolint Dockerfile
+	hadolint dev.Dockerfile
+	hadolint dev.env.Dockerfile
 
 build:
 	docker build -f dev.Dockerfile .
@@ -15,5 +16,5 @@ checkFormat:
 	black --diff --check .
 
 dockerEnv:
-	docker build -f dev.env.Dockerfile -t mattgleich/profile_stack:env .
-	docker run --rm -it mattgleich/profile_stack:env sh
+	docker build -f dev.env.Dockerfile -t mattgleich/PROJECT_NAME:env .
+	docker run --rm -it mattgleich/PROJECT_NAME:env sh
