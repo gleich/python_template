@@ -6,10 +6,11 @@ Describe your changes in detail
 
 ## Steps
 
-- [ ] My change requires a change to the documentation
-- [ ] I have updated the accessible documentation according
-- [ ] I have read the **CONTRIBUTING.md** file
+- [ ] My change requires a change to the documentation.
+- [ ] I have updated the accessible documentation according.
+- [ ] I have read the **CONTRIBUTING.md** file.
 - [ ] There is no duplicate open or closed pull request for this fix/addition/issue resolution.
+- [ ] I created tests for any functions added.
 
 ## Original Issue
 
