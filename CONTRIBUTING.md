@@ -30,7 +30,7 @@ This project uses [black](https://github.com/psf/black) for code formatting, ple
 
 #### 🐳 Docker Container
 
-You can check all your code inside of a docker container with all the dependencies installed by running `make docker-check`. This command will build the image for you and run it. No need to install anything!
+You can check all your code inside of a docker container with all the dependencies installed by running `make docker-lint` and `make test-in-docker`. This command will build the image for you and run it. No need to install anything!
 
 #### ✍️ Manually
 
@@ -43,7 +43,7 @@ First you will need to install the following programs:
 | [poetry](https://github.com/python-poetry/poetry) | Package manager for all python dependencies |
 | [hadolint](https://github.com/hadolint/hadolint)  | Linter for all Dockerfiles                  |
 
-Once you have those installed please run `make local-check`. If you don't get any errors you all set!
+Once you have those installed please run `make local-test` and `make local-lint`. If you don't get any errors your all set!
 
 ## ℹ️ General
 

@@ -14,11 +14,11 @@ RUN pip3 install poetry==1.0.10
 RUN poetry config virtualenvs.create false
 RUN poetry install --no-root -n
 
-# Install hadolint
+# Installing hadolint:
 WORKDIR /usr/bin
 RUN curl -sL -o hadolint "https://github.com/hadolint/hadolint/releases/download/v1.17.6/hadolint-$(uname -s)-$(uname -m)"
 RUN chmod 700 hadolint
 
 WORKDIR /usr/src/app
 
-CMD ["make", "lint"]
+CMD ["make", "local-lint"]

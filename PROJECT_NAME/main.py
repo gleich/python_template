@@ -1,7 +1,5 @@
 def main():
-    """
-    Runs the main file
-    :return: None
+    """Main function for the program
     """
 
 

@@ -1,10 +1,10 @@
 FROM python:3.8
 
-# Meta data
+# Meta data:
 LABEL maintainer="matthewgleich@gmail.com"
 LABEL description="PROJECT_DESCRIPTION"
 
-# Copying over all the files
+# Copying over all the files:
 COPY . /usr/src/app
 WORKDIR /usr/src/app
 
@@ -14,4 +14,4 @@ RUN pip3 install poetry==1.0.10
 RUN poetry config virtualenvs.create false
 RUN poetry install --no-root -n
 
-CMD ["make", "test"]
+CMD ["make", "local-test"]

@@ -1,10 +1,10 @@
 FROM python:3.8
 
-# Meta data
+# Meta data:
 LABEL maintainer="matthewgleich@gmail.com"
 LABEL description="PROJECT_DESCRIPTION"
 
-# Copying over all the files
+# Copying over all the files:
 COPY . /usr/src/app
 WORKDIR /usr/src/app
 

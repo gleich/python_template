@@ -43,10 +43,10 @@ test-in-docker:
 ##########
 
 # Testing
-local-test: test-pytest test-in-docker
-docker-test: test-pytest
+local-test: test-pytest
+docker-test: test-in-docker
 # Linting
-local-lint: lint-black lint-pylint lint-hadolint lint-in-docker
-docker-lint: lint-black lint-pylint lint-hadolint
+local-lint: lint-black lint-pylint lint-hadolint
+docker-lint: lint-in-docker
 # Build
 local-build: build-docker-prod build-docker-dev build-docker-dev-lint
