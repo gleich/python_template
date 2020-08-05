@@ -16,6 +16,15 @@ jobs:
       - name: Install Dependencies
         run: poetry install
       - run: make check-format
+  poetry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v1
+        with:
+          python-version: '3.8'
+      - uses: dschep/install-poetry-action@v1.3
+      - run: poetry check
   lint:
     runs-on: ubuntu-latest
     steps:
