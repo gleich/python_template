@@ -1,7 +1,5 @@
 node_modules
 npm-debug.log
-Dockerfile*
-*Dockerfile
 *.md
 docker-compose*
 .dockerignore
