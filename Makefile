@@ -9,12 +9,19 @@ build-docker-dev:
 build-docker-dev-lint:
 	docker build -f dev.lint.Dockerfile .
 
+############
+# Formatting
+############
+
+format:
+	black .
+
 #########
 # Linting
 #########
 
 lint-black:
-	black .
+	black --check --diff .
 lint-pylint:
 	pylint --errors-only PROJECT_NAME tests
 lint-poetry:
